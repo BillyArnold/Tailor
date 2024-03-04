@@ -11,16 +11,17 @@
 </script>
 
 <main>
-  <img alt="Wails logo" id="logo" src="{logo}">
-  <div class="result" id="result">{resultText}</div>
-  <div class="input-box" id="input">
-    <input autocomplete="off" bind:value={name} class="input" id="name" type="text"/>
-    <button class="btn" on:click={greet}>Greet</button>
-  </div>
+  <textArea>
+    <!--<input autocomplete="off" bind:value={name} class="input" id="name" type="text"/>
+ <!--   <button class="btn" on:click={greet}>Greet</button> -->
 </main>
 
 <style>
-
+  textArea {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
   #logo {
     display: block;
     width: 50%;
