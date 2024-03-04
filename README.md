@@ -1,21 +1,16 @@
-# Tailor
+# README
 
-Tailor is a versatile text editor written in Go, designed to empower users to create their own plugins for tailored editing experiences. Unlike conventional text editors that rely on pre-built plugins for various functionalities, Tailor enables users to craft their own plugins, offering unparalleled customization and flexibility.
+## About
 
-## Features
+This is the official Wails Svelte-TS template.
 
-- **Plugin Customization**: Tailor allows users to develop their own plugins tailored to their specific needs and workflows.
-- **Flexibility**: With Tailor, you are not limited to a fixed set of functionalities. You can extend the editor with your own features seamlessly.
-- **Go-Powered**: Tailor is written in Go, leveraging the language's simplicity, efficiency, and concurrency model.
-- **Easy Integration**: Integrate Tailor effortlessly into your development environment and workflows.
-- **Intuitive API**: Tailor provides an intuitive API for plugin development, making it easy for developers to create powerful extensions.
+## Live Development
 
-## Getting Started
+To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
+server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
+and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
+to this in your browser, and you can call your Go code from devtools.
 
-### Installation
+## Building
 
-To install Tailor, you need to have Go installed on your system. Then, you can install Tailor using `go get`:
-
-```sh
-go get -u github.com/yourusername/tailor
-```
+To build a redistributable, production mode package, use `wails build`.
