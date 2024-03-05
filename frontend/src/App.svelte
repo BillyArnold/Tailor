@@ -1,17 +1,23 @@
 <script lang="ts">
   import logo from './assets/images/logo-universal.png'
-  import {Greet} from '../wailsjs/go/main/App.js'
+  import {Greet, processFile} from '../wailsjs/go/main/App.js'
 
   let resultText: string = "Please enter your name below 👇"
   let name: string
+  let content: string = "";
 
   function greet(): void {
     Greet(name).then(result => resultText = result)
   }
+
+  function processContent(content): void {
+    processFile(content).then(result => content = result);
+  }
 </script>
 
 <main>
-  <textArea>
+  <p>{content}</p>
+  <textArea bind:value={content} on:keyup={processContent(content)}>
     <!--<input autocomplete="off" bind:value={name} class="input" id="name" type="text"/>
  <!--   <button class="btn" on:click={greet}>Greet</button> -->
 </main>
@@ -21,6 +27,10 @@
     display: flex;
     height: 100vh;
     width: 100%;
+    color: white;
+    background-color: rgb(25, 25, 25); 
+    border: none;
+    font-size: 16px;
   }
   #logo {
     display: block;
