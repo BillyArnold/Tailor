@@ -17,6 +17,7 @@
 
 <main>
   <p>{content}</p>
+  <!-- Bind not work? -->
   <textArea bind:value={content} on:keyup={processContent(content)}>
     <!--<input autocomplete="off" bind:value={name} class="input" id="name" type="text"/>
  <!--   <button class="btn" on:click={greet}>Greet</button> -->
