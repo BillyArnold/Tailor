@@ -5,18 +5,19 @@
   let resultText: string = "Please enter your name below 👇"
   let name: string;
   let content: string = ``;
+  let showContent: string = ``;
 
   function greet(): void {
     Greet(name).then(result => resultText = result)
   }
 
   function processContent(): void {
-    ProcessFile(content).then(result => content = result);
+    ProcessFile(content).then(result => showContent = result);
   }
 </script>
 
 <main>
-  <p>{content}</p>
+  <p>{showContent}</p>
   <button class="btn" on:click={processContent}>Save</button>
   <textarea class="content-area" bind:value={content} />
     <!--<input autocomplete="off" bind:value={name} class="input" id="name" type="text"/>-->
