@@ -17,7 +17,7 @@
 </script>
 
 <main>
-  <p>{showContent}</p>
+  <p>{showContent} content</p>
   <button class="btn" on:click={processContent}>Save</button>
   <textarea class="content-area" bind:value={content} />
     <!--<input autocomplete="off" bind:value={name} class="input" id="name" type="text"/>-->
