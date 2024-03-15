@@ -6,6 +6,7 @@
   let name: string;
   let content: string = ``;
   let showContent: string = ``;
+  let fileTree: string[] = ["one", "two"];
 
   ListFiles('/Users/billyarnold/Documents/projects/Tailor');
 
@@ -19,6 +20,11 @@
 </script>
 
 <main>
+  <ul>
+    {#each fileTree as file}
+      <li>{file}</li>
+    {/each}
+  </ul>
   <p>{showContent} content</p>
   <button class="btn" on:click={processContent}>Save</button>
   <textarea class="content-area" bind:value={content} />
