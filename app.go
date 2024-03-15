@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+  "io/ioutil"
+  "log"
 )
 
 // App struct
@@ -26,7 +28,18 @@ func (a *App) Greet(name string) string {
 	return fmt.Sprintf("Hello %s, It's show time!", name)
 }
 
+func (a *App) ListFiles(folderPath string) {
+  files, err := ioutil.ReadDir(folderPath)
+  if (err != nil) {
+    log.Fatal(err)
+  }
+
+  for _, file := range files {
+    fmt.Println(file.Name())
+  }
+}
+
 func (a *App) ProcessFile(file string) string {
   fmt.Sprintf("Saving File...");
-  return fmt.Sprintf(file);
+  return fmt.Sprintf(file)
 }

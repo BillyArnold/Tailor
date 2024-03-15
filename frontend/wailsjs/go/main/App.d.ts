@@ -3,4 +3,6 @@
 
 export function Greet(arg1:string):Promise<string>;
 
+export function ListFiles(arg1:string):Promise<void>;
+
 export function ProcessFile(arg1:string):Promise<string>;

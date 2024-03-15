@@ -1,11 +1,13 @@
 <script lang="ts">
   import logo from './assets/images/logo-universal.png'
-  import {Greet, ProcessFile} from '../wailsjs/go/main/App.js'
+  import {Greet, ProcessFile, ListFiles } from '../wailsjs/go/main/App.js'
 
   let resultText: string = "Please enter your name below 👇"
   let name: string;
   let content: string = ``;
   let showContent: string = ``;
+
+  ListFiles('/Users/billyarnold/Documents/projects/Tailor');
 
   function greet(): void {
     Greet(name).then(result => resultText = result)
