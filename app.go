@@ -34,9 +34,11 @@ func (a *App) ListFiles(folderPath string) {
     log.Fatal(err)
   }
 
-  for _, file := range files {
-    fmt.Println(file.Name())
-  }
+  //for _, file := range files {
+  //  fmt.Println(file.Name())
+  //}
+
+  return fmt.Sprint(files);
 }
 
 func (a *App) ProcessFile(file string) string {

@@ -7,8 +7,10 @@
   let content: string = ``;
   let showContent: string = ``;
   let fileTree: string[] = ["one", "two"];
+  let testString: any = '';
 
-  ListFiles('/Users/billyarnold/Documents/projects/Tailor');
+  ListFiles('/Users/billyarnold/Documents/projects/Tailor')
+    .then(files => LogPrint(files));
 
   function greet(): void {
     Greet(name).then(result => resultText = result)
