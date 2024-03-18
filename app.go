@@ -28,17 +28,20 @@ func (a *App) Greet(name string) string {
 	return fmt.Sprintf("Hello %s, It's show time!", name)
 }
 
-func (a *App) ListFiles(folderPath string) {
+func (a *App) ListFiles(folderPath string) []string {
   files, err := ioutil.ReadDir(folderPath)
   if (err != nil) {
     log.Fatal(err)
   }
 
-  //for _, file := range files {
-  //  fmt.Println(file.Name())
-  //}
+  var fileNames []string;
 
-  return fmt.Sprint(files);
+  for _, file := range files {
+    fmt.Println(file.Name())
+    fileNames = append(fileNames, file.Name());
+  }
+
+  return fileNames;
 }
 
 func (a *App) ProcessFile(file string) string {

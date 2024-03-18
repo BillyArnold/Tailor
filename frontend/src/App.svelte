@@ -10,7 +10,7 @@
   let testString: any = '';
 
   ListFiles('/Users/billyarnold/Documents/projects/Tailor')
-    .then(files => LogPrint(files));
+    .then(files => fileTree = files);
 
   function greet(): void {
     Greet(name).then(result => resultText = result)
