@@ -22,14 +22,16 @@
 </script>
 
 <main>
-  <ul>
+  <div class="file-tree">
     {#each fileTree as file}
-      <li>{file}</li>
+      <div class="file-tree-item">{file}</div>
     {/each}
-  </ul>
-  <p>{showContent} content</p>
-  <button class="btn" on:click={processContent}>Save</button>
-  <textarea class="content-area" bind:value={content} />
+  </div>
+  <div class="main-container">
+    <p>{showContent} content</p>
+    <button class="btn" on:click={processContent}>Save</button>
+    <textarea class="content-area" bind:value={content} />
+  </div>
     <!--<input autocomplete="off" bind:value={name} class="input" id="name" type="text"/>-->
 </main>
 
@@ -45,6 +47,25 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-origin: content-box;
+  }
+
+  main {
+    display: flex;
+  }
+
+  .file-tree {
+    height: 100%;
+    display: flex;
+    width: 10%;
+    flex-direction: column;
+  }
+
+  .file-tree-item {
+    margin-bottom: 12px;
+  }
+
+  .main-container {
+    width: 100%;
   }
 
   .content-area {
